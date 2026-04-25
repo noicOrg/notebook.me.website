@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebook.Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <h1 class="logo">Notebook.Me</h1>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#download">Download</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Minimal. Fast. Powerful.</h2>
+    <p>A premium open-source notebook built in Java.</p>
+    <div class="hero-buttons">
+      <button class="primary" onclick="download()">Download</button>
+      <button class="secondary" onclick="github()">GitHub</button>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <h2>Features</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>⚡ Fast</h3>
+      <p>Lightning-fast performance with optimized Java backend.</p>
+    </div>
+    <div class="card">
+      <h3>📦 Portable</h3>
+      <p>No installation required. Run anywhere.</p>
+    </div>
+    <div class="card">
+      <h3>🌍 Open Source</h3>
+      <p>Fully transparent and community-driven.</p>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="section dark">
+  <h2>Get Notebook.Me</h2>
+  <p>Download the latest version or explore the source code.</p>
+  <div class="hero-buttons">
+    <button class="primary" onclick="download()">Download JAR</button>
+    <button class="secondary" onclick="github()">View on GitHub</button>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>
+    Notebook.Me is designed for developers and students who want a distraction-free, high-performance writing experience.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Notebook.Me • Built with passion</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
