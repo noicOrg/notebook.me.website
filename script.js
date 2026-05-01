@@ -14,7 +14,7 @@ const el = document.getElementById("typing");
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let isFullDeleting = false; // controls full sentence erase
+let isFullDeleting = false;
 
 function animate() {
   const currentWord = words[wordIndex];
@@ -27,7 +27,7 @@ function animate() {
 
     if (charIndex === fullText.length) {
       isDeleting = true;
-      setTimeout(animate, 1200); // ⏸ Pause AFTER full sentence is typed
+      setTimeout(animate, 1200); // ⏸ Pause after full sentence typed
       return;
     }
 
@@ -37,12 +37,12 @@ function animate() {
     el.textContent = fullText.substring(0, charIndex);
 
     if (!isFullDeleting && charIndex === baseText.length) {
-      // ✅ Only last word deleted → switch word
+      // Switch word (people → students → developers)
       wordIndex++;
 
       if (wordIndex >= words.length) {
-        // ✅ Last word reached → now trigger FULL delete
-        wordIndex = words.length - 1; // stay on "developers"
+        // Start full delete after last word
+        wordIndex = words.length - 1;
         isFullDeleting = true;
       } else {
         isDeleting = false;
@@ -50,16 +50,24 @@ function animate() {
     }
 
     if (isFullDeleting && charIndex === 0) {
-      // ✅ Full sentence erased → restart cycle
+      // ✅ FULL ERASE COMPLETE → add realistic pause
       isFullDeleting = false;
       isDeleting = false;
-      wordIndex = 0; // back to "people"
+      wordIndex = 0;
+
+      const delayAfterFullErase = 1500 + Math.random() * 800;
+      // ⏱ 1500–2300ms random delay (realistic human pause)
+
+      setTimeout(animate, delayAfterFullErase);
+      return;
     }
   }
 
   setTimeout(
     animate,
-    isDeleting ? 40 : 60 // ⏱ Typing vs deleting speed
+    isDeleting
+      ? 30 + Math.random() * 20   // ⏱ Deleting speed (randomized)
+      : 50 + Math.random() * 30   // ⏱ Typing speed (randomized)
   );
 }
 
