@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -52,6 +53,26 @@ nav a:hover {
   color: #94a3b8;
   margin-bottom: 20px;
 }
+
+/* Typing animation style starts */
+.trust {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+#typing::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 3px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+/* Typing animation style ends */
 
 .hero-buttons button {
   margin: 10px;
