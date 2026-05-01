@@ -7,15 +7,41 @@ function github() {
 }
 
 // Typing animation
-const text = "Trusted by 2+ people";
-let index = 0;
+const words = ["people", "students", "developers"];
+const baseText = "Trusted by 2+ ";
+const typingElement = document.getElementById("typing");
 
-function typeEffect() {
-  if (index < text.length) {
-    document.getElementById("typing").textContent += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, 60);
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function animateText() {
+  const currentWord = words[wordIndex];
+  const fullText = baseText + currentWord;
+
+  if (!isDeleting) {
+    // Typing
+    charIndex++;
+    typingElement.textContent = fullText.substring(0, charIndex);
+
+    if (charIndex === fullText.length) {
+      isDeleting = true;
+      setTimeout(animateText, 1200); // pause before erase
+      return;
+    }
+  } else {
+    // Deleting
+    charIndex--;
+    typingElement.textContent = fullText.substring(0, charIndex);
+
+    if (charIndex === baseText.length) {
+      // switch word after deleting last word
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
   }
+
+  setTimeout(animateText, isDeleting ? 40 : 60);
 }
 
-window.onload = typeEffect;
+window.onload = animateText;
