@@ -1,5 +1,5 @@
 function download() {
-  window.open("https://github.com/noicOrg/notebook.me.main/releases/tag/Releases");
+  window.open("https://github.com/VervainLabs/notebook.me.main/releases/download/Releases/NotebookMe-portable.rar");
 }
 
 function github() {
