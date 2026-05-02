@@ -152,6 +152,7 @@ button {
   transform: translateX(-50%);
 
   background-color: #222;
+  border: 1px solid gold;
   color: #fff;
   padding: 6px 10px;
   border-radius: 6px;
