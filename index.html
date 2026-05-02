@@ -25,7 +25,7 @@
       ✔ <span id="typing">Trusted by 2+ people</span>
     </p>
     <div class="hero-buttons">
-      <button class="primary" onclick="download()">Download</button>
+      <button class="primary" onclick="location.href='#download'">Download</button>
       <button class="secondary" onclick="github()">GitHub</button>
     </div>
   </div>
@@ -50,16 +50,19 @@
 </section>
 
 <section id="download" class="section dark">
-  <h2>Get Notebook.Me</h2>
-  <p>Download the latest version or explore the source code.</p>
+  <h2>Get Notebook.Me</h2> <br />
+  <p>Download the latest version or explore the source code.</p> <br />
   <div class="hero-buttons">
-    <button class="primary" onclick="download()">Download JAR</button>
+    <div class="tooltip">
+  <button class="primary" onclick="download()">Download JAR</button>
+  <span class="tooltip-text">A .rar file will be downloaded</span>
+  </div>
     <button class="secondary" onclick="github()">View on GitHub</button>
   </div>
 </section>
 
 <section id="about" class="section">
-  <h2>About</h2>
+  <h2>About</h2> <br />
   <p>
     Notebook.Me is designed for developers and students who want a distraction-free, high-performance writing experience.
   </p>
