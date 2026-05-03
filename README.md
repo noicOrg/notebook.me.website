@@ -79,6 +79,7 @@ This project is licensed under the MIT License.
 ## 💡 Related Project
 
 👉 Main App: https://github.com/VervainLabs/notebook.me.main
+👉 Get Latest App: https://github.com/VervainLabs/notebook.me.main/releases/
 
 ---
 
